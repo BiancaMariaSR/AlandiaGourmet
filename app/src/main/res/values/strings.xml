@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FastPizza</string>
+    <string name="title_activity_imprime_dados">ImprimeDados</string>
+
+    <string-array name="tamanho">
+        <item>Pequena</item>
+        <item>Média</item>
+        <item>Grande</item>
+    </string-array>
+
+</resources>
