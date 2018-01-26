@@ -21,8 +21,8 @@
         </activity>
 
         <activity android:name=".PedidoActivity"></activity>
-        <activity android:name=".RecuperaPedidos" />
-        <activity android:name=".ListagemClientesRecyclerview" />
+        <activity android:name=".RecuperaPedidos"></activity>
+        <activity android:name=".ListagemClientesRecyclerview"></activity>
         <activity android:name=".CadastroCliente"></activity>
         <activity android:name=".AlteraCliente"></activity>
     </application>
