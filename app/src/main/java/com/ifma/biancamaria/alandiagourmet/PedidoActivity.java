@@ -8,9 +8,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-public class PizzaActivity extends AppCompatActivity implements View.OnClickListener{
+public class PedidoActivity extends AppCompatActivity implements View.OnClickListener{
 
     private EditText txtNomeCli;
     private RadioGroup rgBordas;
@@ -21,7 +20,7 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pizza);
+        setContentView(R.layout.activity_pedido);
         txtNomeCli = (EditText) findViewById(R.id.txtNome);
         rgBordas = (RadioGroup) findViewById(R.id.rgBorda);
         spTam = (Spinner) findViewById(R.id.spTamanho);
@@ -75,7 +74,7 @@ public class PizzaActivity extends AppCompatActivity implements View.OnClickList
 
 
         //Toast.makeText(this,"Clicou no botao",Toast.LENGTH_SHORT).show();
-        Intent it = new Intent(this,Pedidos.class);
+        Intent it = new Intent(this,RecuperaPedidos.class);
         Bundle param = new Bundle();
         param.putString("nomecli",nomecliente);
         param.putString("tam",tamanho);

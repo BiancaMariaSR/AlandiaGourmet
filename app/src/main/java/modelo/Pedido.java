@@ -6,22 +6,40 @@ package modelo;
 
 public class Pedido {
 
-    private int fkidcliente;
-    private int fkidpizza;
+    private int idpedido;
+    private String tipo;
+    private String sabor;
+    private String tamanho;
 
-    public int getFkidcliente() {
-        return fkidcliente;
+    public int getIdpedido() {
+        return idpedido;
     }
 
-    public void setFkidcliente(int fkidcliente) {
-        this.fkidcliente = fkidcliente;
+    public void setIdpedido(int idpedido) {
+        this.idpedido = idpedido;
     }
 
-    public int getFkidpizza() {
-        return fkidpizza;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setFkidpizza(int fkidpizza) {
-        this.fkidpizza = fkidpizza;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getSabor() {
+        return sabor;
+    }
+
+    public void setSabor(String sabor) {
+        this.sabor = sabor;
+    }
+
+    public String getTamanho() {
+        return tamanho;
+    }
+
+    public void setTamanho(String tamanho) {
+        this.tamanho = tamanho;
     }
 }

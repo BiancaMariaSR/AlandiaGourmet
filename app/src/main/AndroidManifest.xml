@@ -20,8 +20,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PizzaActivity"></activity>
-        <activity android:name=".Pedidos" />
+        <activity android:name=".PedidoActivity"></activity>
+        <activity android:name=".RecuperaPedidos" />
         <activity android:name=".ListagemClientesRecyclerview" />
         <activity android:name=".CadastroCliente"></activity>
         <activity android:name=".AlteraCliente"></activity>
