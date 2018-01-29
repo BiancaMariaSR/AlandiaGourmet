@@ -21,21 +21,32 @@ public class AlteraCliente extends AppCompatActivity {
     private EditText etEndereco;
     private EditText etTelefone;
     private Button btnAlterar;
+    private Cliente cliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_cliente);
+        setContentView(R.layout.activity_alterar_cliente);
+
+        cliente = new Cliente();
+        Bundle retornaParametro = getIntent().getExtras();
+        cliente.setIdcliente(retornaParametro.getInt("id"));
+        cliente.setNome(retornaParametro.getString("nome"));
+        cliente.setEndereco(retornaParametro.getString("endereco"));
+        cliente.setTelefone(retornaParametro.getString("telefone"));
 
         etNome = (EditText) findViewById(R.id.txtNome);
         etEndereco = (EditText) findViewById(R.id.txtEndereco);
         etTelefone = (EditText) findViewById(R.id.txtTelefone);
         btnAlterar = (Button) findViewById(R.id.btnEnviar);
-        btnAlterar.setText("Alterar");
+
+        etNome.setText(cliente.getNome());
+        etEndereco.setText(cliente.getEndereco());
+        etTelefone.setText(cliente.getTelefone());
 
     }
 
-    public void salvarCliente(View v){
+    public void alterarCliente(View v){
         String nome="",endereco = "",telefone="";
 
         //Recuperação da aula dada no dia ministrada pelo professor
@@ -43,15 +54,14 @@ public class AlteraCliente extends AppCompatActivity {
         endereco = etEndereco.getText().toString();
         telefone = etTelefone.getText().toString();
 
-        //Criacao do objeto baseado na classe de modelo
-        Cliente cli = new Cliente();
-        cli.setNome(nome);
-        cli.setEndereco(endereco);
-        cli.setTelefone(telefone);
+
+        cliente.setNome(nome);
+        cliente.setEndereco(endereco);
+        cliente.setTelefone(telefone);
 
         ClienteDao dao = new ClienteDao(this);
 
-        if (dao.alterar(cli)){
+        if (dao.alterar(cliente)){
 
             Toast.makeText(this,"Dados salvos com sucesso!!!",Toast.LENGTH_SHORT).show();
 

@@ -49,9 +49,8 @@ public class ClienteDao {
         valores.put("nome",cliente.getNome());
         valores.put("endereco",cliente.getEndereco());
         valores.put("telefone",cliente.getTelefone());
-        valores.put("idcliente",cliente.getIdcliente());
 
-        resultado = gw.getDatabase().update("cliente",valores,"idcliente", new String[]{""});
+        resultado = gw.getDatabase().update("cliente",valores,"idcliente=?", new String[]{"" + String.valueOf(cliente.getIdcliente())});
 
         if (resultado > 0)
             retorno = true;
@@ -61,16 +60,17 @@ public class ClienteDao {
     public ArrayList<Cliente> listar(){
         listaclientes = new ArrayList<Cliente>();
 
-        String colunas[] = {"nome","endereco","telefone"};
+        String colunas[] = {"idcliente","nome","endereco","telefone"};
         cursor = gw.getDatabase().query("cliente",colunas,null,null,null,null,"nome");
 
         if (cursor.getCount()>0){
 
             while(cursor.moveToNext()){
                 Cliente cli = new Cliente();
-                cli.setNome(cursor.getString(0));
-                cli.setEndereco(cursor.getString(1));
-                cli.setTelefone(cursor.getString(2));
+                cli.setIdcliente(cursor.getInt(0));
+                cli.setNome(cursor.getString(1));
+                cli.setEndereco(cursor.getString(2));
+                cli.setTelefone(cursor.getString(3));
                 listaclientes.add(cli);
 
             }
@@ -81,12 +81,13 @@ public class ClienteDao {
     }
 
 
-    public boolean excluir(int id){
+    public boolean excluir(Cliente cliente){
 
         long resultado = 0;
         boolean retorno = false;
 
-        resultado = gw.getDatabase().delete("cliente","idcliente",new String[]{id + " "});
+        resultado = gw.getDatabase().delete("cliente","idcliente=?",
+                new String[]{"" + String.valueOf(cliente.getIdcliente())});
         if (resultado > 0)
             retorno = true;
         return retorno;

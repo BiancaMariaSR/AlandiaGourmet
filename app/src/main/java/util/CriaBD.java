@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class CriaBD extends SQLiteOpenHelper{
 
-    private static final String DB_NAME = "fastpizza.db";
+    private static final String DB_NAME = "pedepizza.db";
     private static final int DB_VERSION = 1;
 
     private String CREATE_PEDIDO = "CREATE TABLE pedido (idpedido INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +

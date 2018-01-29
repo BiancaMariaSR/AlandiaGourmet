@@ -1,21 +1,21 @@
 package adapters;
+import com.ifma.biancamaria.alandiagourmet.AlteraCliente;
+import com.ifma.biancamaria.alandiagourmet.R;
+
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-
-import com.ifma.biancamaria.alandiagourmet.AlteraCliente;
-import com.ifma.biancamaria.alandiagourmet.R;
+import android.content.Context;
+import android.content.Intent;
 import java.util.ArrayList;
+import android.os.Bundle;
+import android.view.View;
 import dao.ClienteDao;
 import modelo.Cliente;
+
 
 public class AdapterCliente extends RecyclerView.Adapter  {
 
@@ -29,7 +29,7 @@ public class AdapterCliente extends RecyclerView.Adapter  {
         this.listadeclientes = listadeclientes;
     }
 
-    public void alterarLista(int valor, Cliente cli){
+    public void alterarLista(Cliente cli){
         Intent it= new Intent(ctx,  AlteraCliente.class);
         Bundle parametro = new Bundle();
         parametro.putInt("id", cli.getIdcliente());
@@ -57,41 +57,43 @@ public class AdapterCliente extends RecyclerView.Adapter  {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        final Cliente cli = listadeclientes.get(position);
+        final Cliente cliente = listadeclientes.get(position);
         ViewHolderCliente holderCliente = (ViewHolderCliente) holder;
-        holderCliente.lblNomeCliente.setText(cli.getNome());
+        holderCliente.lblNomeCliente.setText(cliente.getNome());
+        holderCliente.btnEditar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alterarLista(cliente);
+            }
+        });
 
-        holderCliente.btnEditar.setOnClickListener(view -> alterarLista(position,cli));
-
-        holderCliente.btnExcluir.setOnClickListener(new Button.OnClickListener() {
+        holderCliente.btnExcluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 final View view = v;
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                builder.setTitle("Confirmação")
-                        .setMessage("Tem certeza que deseja excluir este cliente?")
-                        .setPositiveButton("Excluir", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                ClienteDao dao = new ClienteDao(view.getContext());
-                                boolean sucesso = dao.excluir(cli.getIdcliente());
-                                if(sucesso) {
-                                    removerCliente(cli);
-                                    Snackbar.make(view, "Excluiu!", Snackbar.LENGTH_LONG)
-                                            .setAction("Action", null).show();
-                                }else{
-                                    Snackbar.make(view, "Erro ao excluir o cliente!", Snackbar.LENGTH_LONG)
-                                            .setAction("Action", null).show();
-                                }
-                            }
-                        })
-                        .setNegativeButton("Cancelar", null)
-                        .create()
-                        .show();
+                builder.setTitle("Confirmação").setMessage("Tem certeza que deseja excluit este cliente?");
+                builder.setPositiveButton("Excluir", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        ClienteDao dao = new ClienteDao(view.getContext());
+                        boolean sucesso = dao.excluir(cliente);
+                        if(sucesso){
+                            removerCliente(cliente);
+                            Snackbar.make(view,"Excluiu!", Snackbar.LENGTH_LONG).setAction("Action",null).show();
+                        }else{
+                            Snackbar.make(view,"Erro ao excluir o cliente!",Snackbar.LENGTH_LONG).setAction("Action",null).show();
+                        }
+                    }
+                });
+
+                builder.setNegativeButton("Cancelar",null).create().show();
             }
         });
 
     }
+
 
     @Override
     public int getItemCount() {
