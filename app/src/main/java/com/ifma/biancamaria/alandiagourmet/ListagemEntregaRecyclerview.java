@@ -1,36 +1,36 @@
 package com.ifma.biancamaria.alandiagourmet;
 
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.os.Bundle;
 
-import adapters.AdapterCliente;
-import dao.ClienteDao;
+import adapters.AdapterEntrega;
+import dao.EntregaDao;
 
-public class ListagemClientesRecyclerview extends AppCompatActivity {
+public class ListagemEntregaRecyclerview extends AppCompatActivity {
 
     private RecyclerView meurecyclerview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.listagem_clientes);
+        setContentView(R.layout.listagem_entrega);
 
-        meurecyclerview = (RecyclerView) findViewById(R.id.rcvListagemdeClientes);
+        meurecyclerview = (RecyclerView) findViewById(R.id.rcvListagemEntrega);
         LinearLayoutManager nossolayout = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
 
         meurecyclerview.setLayoutManager(nossolayout);
 
-        ClienteDao dao = new ClienteDao(this);
+        EntregaDao dao = new EntregaDao(this);
 
-        AdapterCliente meuadapter = new AdapterCliente(this,dao.listar());
+        AdapterEntrega meuadapter = new AdapterEntrega(this,dao.listar());
 
         meurecyclerview.setAdapter(meuadapter);
 
     }
 
-    public void adicionaCliente(){
+    public void adicionaEntrega(){
 
     }
 

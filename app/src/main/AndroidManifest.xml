@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".PizzaSplash"
+            android:name=".TelaInicial"
             android:theme="@style/AppCompat.TelaCheia">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,11 +20,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PedidoActivity"></activity>
-        <activity android:name=".RecuperaPedidos"></activity>
+        <activity android:name=".ActivityPizza"></activity>
+        <activity android:name=".ActivityPedido"></activity>
+        <activity android:name=".ActivityCliente"></activity>
+        <activity android:name=".ActivityEntrega"></activity>
+        <activity android:name=".AlterarCliente"></activity>
+        <activity android:name=".AlterarEntrega"></activity>
+        <activity android:name=".AlterarPedido"></activity>
         <activity android:name=".ListagemClientesRecyclerview"></activity>
-        <activity android:name=".CadastroCliente"></activity>
-        <activity android:name=".AlteraCliente"></activity>
+        <activity android:name=".ListagemEntregaRecyclerview"></activity>
+        <activity android:name=".ListagemPedidoRecyclerview"></activity>
     </application>
 
 </manifest>

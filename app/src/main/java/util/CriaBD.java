@@ -13,8 +13,8 @@ public class CriaBD extends SQLiteOpenHelper{
             "tipo VARCHAR (50), sabor VARCHAR (50), tamanho VARCHAR (50))";
     private String CREATE_CLIENTE = "CREATE TABLE cliente (idcliente INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
             "nome VARCHAR (50), endereco VARCHAR (100), telefone VARCHAR (50))";
-    /*private String CREATE_PEDIDO = "CREATE TABLE pedido (fkidcliente INTEGER NOT NULL, fkidpizza INTEGER NOT NULL," +
-            "PRIMARY KEY fkidcliente,fkidpizza)";*/
+    private String CREATE_ENTREGA = "CREATE TABLE entrega (identrega INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+            "nome VARCHAR (50), endereco VARCHAR (100), telefone VARCHAR (50))";
 
 
     public CriaBD(Context ctx){
@@ -27,18 +27,18 @@ public class CriaBD extends SQLiteOpenHelper{
 
         db.execSQL(CREATE_PEDIDO);
         db.execSQL(CREATE_CLIENTE);
-        //db.execSQL(CREATE_PEDIDO);
+        db.execSQL(CREATE_ENTREGA);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int versaoantiga, int versaonova) {
         CREATE_PEDIDO = "DROP TABLE IF EXISTS pedido";
         CREATE_CLIENTE = "DROP TABLE IF EXISTS cliente";
-        //CREATE_PEDIDO = "DROP TABLE IF EXISTS pedido";
+        CREATE_ENTREGA = "DROP TABLE IF EXISTS entrega";
 		
 		db.execSQL(CREATE_PEDIDO);
 		db.execSQL(CREATE_CLIENTE);
-		//db.execSQL(CREATE_PEDIDO);
+		db.execSQL(CREATE_ENTREGA);
 		onCreate(db);
     }
 }

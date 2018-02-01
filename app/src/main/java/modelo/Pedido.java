@@ -10,6 +10,7 @@ public class Pedido {
     private String tipo;
     private String sabor;
     private String tamanho;
+    private String nome;
 
     public int getIdpedido() {
         return idpedido;
@@ -21,6 +22,14 @@ public class Pedido {
 
     public String getTipo() {
         return tipo;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public void setTipo(String tipo) {

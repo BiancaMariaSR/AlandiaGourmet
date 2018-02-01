@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgcolor"
+    android:background="@color/colorBack"
     android:orientation="vertical"
     android:weightSum="1">
 
@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nome do cliente:"
-        android:textColor="@color/bottombartext"
-        android:textSize="28dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
     <EditText
@@ -30,8 +30,8 @@
         android:layout_height="wrap_content"
         android:text="Escolha sua pizza:"
         android:layout_marginTop="20dp"
-        android:textColor="@color/bottombartext"
-        android:textSize="28dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
     <RadioGroup
@@ -41,21 +41,21 @@
         android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/rdcBorda"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Com Borda"
-            android:textSize="24sp" />
+    <RadioButton
+        android:id="@+id/rdcBorda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Com Borda"
+        android:textSize="24sp" />
 
-        <RadioButton
-            android:id="@+id/rdsBorda"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Sem Borda"
-            android:textSize="24sp" />
+    <RadioButton
+        android:id="@+id/rdsBorda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Sem Borda"
+        android:textSize="24sp" />
     </RadioGroup>
 
     <TextView
@@ -63,8 +63,8 @@
         android:layout_height="wrap_content"
         android:text="Tamanho:"
         android:layout_marginTop="20dp"
-        android:textColor="@color/bottombartext"
-        android:textSize="28dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
     <Spinner
@@ -81,8 +81,8 @@
         android:layout_height="wrap_content"
         android:text="Sabores:"
         android:layout_marginTop="10dp"
-        android:textColor="@color/bottombartext"
-        android:textSize="28dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -91,45 +91,45 @@
         android:layout_marginTop="10dp"
         >
 
-        <CheckBox
-            android:id="@+id/chkFrango"
-            android:layout_width="202dp"
-            android:layout_height="wrap_content"
-            android:text="Frango"
-            android:textSize="24sp" />
+    <CheckBox
+        android:id="@+id/chkFrango"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:text="Frango"
+        android:textSize="24sp" />
 
 
-        <CheckBox
-            android:id="@+id/chkCalabresa"
-            android:layout_width="177dp"
-            android:layout_height="wrap_content"
-            android:text="Calabresa"
-            android:textSize="24sp" />
+    <CheckBox
+        android:id="@+id/chkCalabresa"
+        android:layout_width="177dp"
+        android:layout_height="wrap_content"
+        android:text="Calabresa"
+        android:textSize="24sp" />
 
-    </LinearLayout>
+     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <CheckBox
-            android:id="@+id/chkPortuguesa"
-            android:layout_width="202dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="Portuguesa"
-            android:textSize="24sp"
+    <CheckBox
+        android:id="@+id/chkPortuguesa"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="Portuguesa"
+        android:textSize="24sp"
 
-            />
+        />
 
-        <CheckBox
-            android:id="@+id/chkCarneSeca"
-            android:layout_width="202dp"
-            android:layout_height="wrap_content"
-            android:text="Carne Seca"
-            android:textSize="24sp"
-            android:layout_gravity="right"
-            />
+    <CheckBox
+        android:id="@+id/chkCarneSeca"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:text="Carne Seca"
+        android:textSize="24sp"
+        android:layout_gravity="right"
+        />
 
     </LinearLayout>
 

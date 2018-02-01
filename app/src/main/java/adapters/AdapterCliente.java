@@ -1,5 +1,5 @@
 package adapters;
-import com.ifma.biancamaria.alandiagourmet.AlteraCliente;
+import com.ifma.biancamaria.alandiagourmet.AlterarCliente;
 import com.ifma.biancamaria.alandiagourmet.R;
 
 import android.app.AlertDialog;
@@ -30,7 +30,7 @@ public class AdapterCliente extends RecyclerView.Adapter  {
     }
 
     public void alterarLista(Cliente cli){
-        Intent it= new Intent(ctx,  AlteraCliente.class);
+        Intent it= new Intent(ctx,  AlterarCliente.class);
         Bundle parametro = new Bundle();
         parametro.putInt("id", cli.getIdcliente());
         parametro.putString("nome", cli.getNome());

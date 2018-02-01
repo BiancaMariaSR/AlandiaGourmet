@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bgcolor"
-    android:orientation="vertical"
-    android:weightSum="1">
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/bgcolor"
+android:orientation="vertical"
+android:weightSum="1">
 
     <TextView
         android:id="@+id/lblNome"
@@ -140,18 +140,21 @@
         android:layout_marginTop="20dp">
 
         <Button
-            android:id="@+id/btnPedir"
+            android:id="@+id/btnEnviar"
             android:layout_width="184dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:text="Pedir" />
+            android:onClick="alterarPedido"
+            android:text="Alterar" />
 
         <Button
             android:id="@+id/btnListar"
             android:layout_width="172dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:onClick="listarPedido"
             android:text="Listar" />
 
     </LinearLayout>
+
 </LinearLayout>
