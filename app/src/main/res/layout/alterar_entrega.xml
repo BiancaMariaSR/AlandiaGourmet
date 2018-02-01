@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/colorBack"
+android:orientation="vertical"
+android:weightSum="1">
+
+    <TextView
+        android:id="@+id/lblNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome do cliente:"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:ems="30"
+        android:fontFamily="@string/app_name"
+        android:inputType="textPersonName" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Endereço:"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtEndereco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:ems="30"
+        android:fontFamily="@string/app_name"
+        android:inputType="textPersonName" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Telefone:"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtTelefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:ems="30"
+        android:fontFamily="@string/app_name"
+        android:inputType="phone" />
+
+    <LinearLayout
+        android:layout_width="358dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:onClick="alterarEntrega"
+            android:text="Alterar" />
+
+        <Button
+            android:id="@+id/btnListar"
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:onClick="listarEntrega"
+            android:text="Listar" />
+
+    </LinearLayout>
+
+</LinearLayout>
