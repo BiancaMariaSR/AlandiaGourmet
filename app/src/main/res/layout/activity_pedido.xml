@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBack"
+    android:background="@drawable/bgcolor"
     android:orientation="vertical"
     android:weightSum="1">
 
@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nome do cliente:"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30dp"
+        android:textColor="@color/bottombartext"
+        android:textSize="28dp"
         android:textStyle="bold" />
 
     <EditText
@@ -30,8 +30,8 @@
         android:layout_height="wrap_content"
         android:text="Escolha sua pizza:"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30dp"
+        android:textColor="@color/bottombartext"
+        android:textSize="28dp"
         android:textStyle="bold" />
 
     <RadioGroup
@@ -63,8 +63,8 @@
         android:layout_height="wrap_content"
         android:text="Tamanho:"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30dp"
+        android:textColor="@color/bottombartext"
+        android:textSize="28dp"
         android:textStyle="bold" />
 
     <Spinner
@@ -81,8 +81,8 @@
         android:layout_height="wrap_content"
         android:text="Sabores:"
         android:layout_marginTop="10dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30dp"
+        android:textColor="@color/bottombartext"
+        android:textSize="28dp"
         android:textStyle="bold" />
 
     <LinearLayout

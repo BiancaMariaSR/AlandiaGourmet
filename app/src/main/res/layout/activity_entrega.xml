@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:background="@color/colorBack"
+    android:background="@drawable/bgcolor"
 android:orientation="vertical"
 android:weightSum="1">
 
@@ -11,7 +11,7 @@ android:weightSum="1">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nome do cliente:"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/bottombartext"
         android:textSize="30dp"
         android:textStyle="bold" />
 
@@ -30,7 +30,7 @@ android:weightSum="1">
         android:layout_height="wrap_content"
         android:text="Endereço:"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/bottombartext"
         android:textSize="30dp"
         android:textStyle="bold" />
 
@@ -49,7 +49,7 @@ android:weightSum="1">
         android:layout_height="wrap_content"
         android:text="Telefone:"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/bottombartext"
         android:textSize="30dp"
         android:textStyle="bold" />
 
